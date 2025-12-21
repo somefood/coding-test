@@ -8,6 +8,7 @@ arr = list(map(int, input().split()))
 
 lt = 1
 rt = sum(arr)
+maxx = max(arr)
 
 res = 0
 
@@ -28,7 +29,7 @@ def count(capacity):
 while lt <= rt:
     mid = (lt + rt) // 2
 
-    if count(mid) <= M:
+    if mid >= maxx and count(mid) <= M:
         res = mid
         rt = mid - 1
     else:

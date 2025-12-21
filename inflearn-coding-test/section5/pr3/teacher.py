@@ -14,6 +14,7 @@ def count(capacity):
 
 n, m = map(int, input().split())
 music = list(map(int, input().split()))
+maxx = max(music)
 
 lt = 1
 rt = sum(music)
@@ -22,7 +23,7 @@ res = 0
 
 while lt <= rt:
     mid = (lt + rt) // 2
-    if count(mid) <= m: # 그 이하가 되었다면 m은 무조건 됨
+    if mid >= maxx and count(mid) <= m: # 그 이하가 되었다면 m은 무조건 됨
         res = mid
         rt = mid - 1
     else:
